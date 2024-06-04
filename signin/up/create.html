@@ -15,7 +15,7 @@
       </div>
       <h2>Create an Account</h2>
       <p>Sign up to use our services.</p>
-      <form id="signup-form">
+      <form id="signup-form" method="post" action="http://localhost:8090">
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" required>
@@ -32,7 +32,7 @@
           <label for="confirm-password">Confirm Password</label>
           <input type="password" id="confirm-password" name="confirm-password" required>
         </div>
-        <button type="submit" class="btn">Create Account</button>
+        <button type="submit" id="submits" class="btn">Create Account</button>
       </form>
       <div class="or-separator">
         <span>or</span>

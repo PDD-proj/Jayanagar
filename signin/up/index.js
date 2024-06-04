@@ -36,7 +36,7 @@ app.post("/", async (req, res) => {
     const userData = new User(req.body);
     await userData.save();
     console.log("User saved successfully");
-    let submitHtml = fs.readFileSync("submit.html", "utf8");
+    let submitHtml = fs.readFileSync("homepage/index.html", "utf8");
     res.send(submitHtml);
   } catch (error) {
     console.error("Error saving user:", error);

@@ -1,13 +1,20 @@
-FROM python:3.9-slim
+# Use the official Node.js image.
+FROM node:16
 
-# Set the working directory in the container
+# Create and change to the app directory.
 WORKDIR /usr/src/app
 
-# Copy all files from the current directory into the container
+# Copy package.json and package-lock.json.
+COPY package*.json ./
+
+# Install app dependencies.
+RUN npm install
+
+# Copy application code.
 COPY . .
 
-# Expose port 8000
-EXPOSE 8000
+# Expose the port the app runs on.
+EXPOSE 5000
 
-# Run a simple HTTP server to serve the files
-CMD ["python", "-m", "http.server", "8000"]
+# Start the app.
+CMD ["node", "server.js"]
